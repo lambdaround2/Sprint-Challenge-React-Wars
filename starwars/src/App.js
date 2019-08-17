@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
-
+import styled from "styled-components";
 import axios from "axios";
 
-import "./App.css";
+const StyledApp = styled.div`
+  text-align: center;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`;
+
+const Header = styled.h1`
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+`;
+
+const Grid = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -29,14 +45,14 @@ const App = () => {
 
   if (!characterData) return <h1>LOADING...</h1>;
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-      <section className="grid-container">
+    <StyledApp>
+      <Header>React Wars</Header>
+      <Grid>
         {characterData.map(char => {
           return <CharacterCard char={char} />;
         })}
-      </section>
-    </div>
+      </Grid>
+    </StyledApp>
   );
 };
 
