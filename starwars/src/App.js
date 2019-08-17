@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import axios from "axios";
+import { ButtonGroup } from "semantic-ui-react";
+import image from "./sw-bg.jpg";
+
+const GlobalStyle = createGlobalStyle`
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url(${image});
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+`;
 
 const StyledApp = styled.div`
   text-align: center;
@@ -52,6 +66,7 @@ const App = () => {
           return <CharacterCard char={char} />;
         })}
       </Grid>
+      <GlobalStyle />
     </StyledApp>
   );
 };
