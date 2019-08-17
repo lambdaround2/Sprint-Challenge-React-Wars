@@ -27,12 +27,15 @@ const App = () => {
       });
   }, []);
 
+  if (!characterData) return <h1>LOADING...</h1>;
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {characterData.map(char => {
-        return <CharacterCard char={char} />;
-      })}
+      <section className="grid-container">
+        {characterData.map(char => {
+          return <CharacterCard char={char} />;
+        })}
+      </section>
     </div>
   );
 };
