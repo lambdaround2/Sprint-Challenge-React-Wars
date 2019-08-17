@@ -9,27 +9,27 @@ function CharacterCard(props) {
   return (
     <Card className="character-card">
       <Card.Content>
-        <Card.Header className="card-header">{props.char.name}</Card.Header>
+        <Card.Header className="card-header">{props.name}</Card.Header>
 
         <Card.Description className="char-attributes">
           <span>Birth Year:</span>
-          {props.char.birth_year}
+          {props.birthYear}
         </Card.Description>
         <Card.Description className="char-attributes">
           <span>Eye Color:</span>
-          {props.char.eye_color}
+          {props.eyeColor}
         </Card.Description>
         <Card.Description className="char-attributes">
           <span>Gender:</span>
-          {props.char.gender}
+          {props.gender}
         </Card.Description>
         <Card.Description className="char-attributes">
           <span>Hair Color:</span>
-          {props.char.hair_color}
+          {props.hairColor}
         </Card.Description>
         <Card.Description className="char-attributes">
           <span>Skin Color:</span>
-          {props.char.skin_color}
+          {props.skinColor}
         </Card.Description>
       </Card.Content>
     </Card>

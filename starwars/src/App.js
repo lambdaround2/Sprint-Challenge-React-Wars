@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import CharacterCard from "./components/CharacterCard";
 import styled, { createGlobalStyle } from "styled-components";
 import axios from "axios";
-import { ButtonGroup } from "semantic-ui-react";
 import image from "./sw-bg.jpg";
 
 const GlobalStyle = createGlobalStyle`
@@ -63,7 +62,15 @@ const App = () => {
       <Header>React Wars</Header>
       <Grid>
         {characterData.map(char => {
-          return <CharacterCard char={char} />;
+          return (
+            <CharacterCard
+              name={char.name}
+              birthYear={char.birth_year}
+              gender={char.gender}
+              hairColor={char.hair_color}
+              skinColor={char.skin_color}
+            />
+          );
         })}
       </Grid>
       <GlobalStyle />
