@@ -9,12 +9,28 @@ function CharacterCard(props) {
   return (
     <Card className="character-card">
       <Card.Content>
-        <Card.Header>{props.char.name}</Card.Header>
-        <Card.Description>{props.char.birth_year}</Card.Description>
-        <Card.Description>{props.char.eye_color}</Card.Description>
-        <Card.Description>{props.char.gender}</Card.Description>
-        <Card.Description>{props.char.hair_color}</Card.Description>
-        <Card.Description>{props.char.skin_color}</Card.Description>
+        <Card.Header className="card-header">{props.char.name}</Card.Header>
+
+        <Card.Description className="char-attributes">
+          <span>Birth Year:</span>
+          {props.char.birth_year}
+        </Card.Description>
+        <Card.Description className="char-attributes">
+          <span>Eye Color:</span>
+          {props.char.eye_color}
+        </Card.Description>
+        <Card.Description className="char-attributes">
+          <span>Gender:</span>
+          {props.char.gender}
+        </Card.Description>
+        <Card.Description className="char-attributes">
+          <span>Hair Color:</span>
+          {props.char.hair_color}
+        </Card.Description>
+        <Card.Description className="char-attributes">
+          <span>Skin Color:</span>
+          {props.char.skin_color}
+        </Card.Description>
       </Card.Content>
     </Card>
   );
